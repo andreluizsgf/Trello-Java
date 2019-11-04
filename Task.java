@@ -8,11 +8,13 @@ class Task {
     private boolean isDone; 
 
     public Task(String name) {
+        this.id = this.count++;
         this.name = name;
         this.isDone = false;
     }
 
     public Task(String name, Date date) {
+        this.id = this.count++;
         this.name = name;
         this.isDone = false;
         this.date = date;

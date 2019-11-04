@@ -1,6 +1,6 @@
 package app;
 
-class Person {
+public abstract class Person {
     private static int count = 0; 
     private final int id;
     private String name;
@@ -11,11 +11,13 @@ class Person {
 
     }
 
-    public String getName() {
+    public String getName(){
         return this.name;
     }
 
-    public setName() {
+    public setName(String name){
         this.name = name;
     }
+
+    public abstract coco();
 }

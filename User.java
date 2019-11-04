@@ -2,11 +2,13 @@ import java.util.*;
 
 package app;
 
-class User extends Person {
+public class User extends Person {
     private Arraylist<Task> tasks;
+    private boolean isManager;
 
     public User(String name){
         super(name);
+        this.isManager = false;
         this.task = new Arraylist<Task>();
     }
 
@@ -34,6 +36,11 @@ class User extends Person {
     public void updateTask(int task_index, String name, Date date) {
         this.updateTask(task_index, name);
         this.tasks.get(task_index).setDate(date);
+    }
+
+    public Group createGroup(String name){
+        this.isManager = true;
+        return new Group(name);
     }
 
 }

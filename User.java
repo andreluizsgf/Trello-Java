@@ -1,18 +1,17 @@
-import java.util.*; 
-
-package app;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class User extends Person {
-    private Arraylist<Task> tasks;
+    private ArrayList<Task> tasks;
     private boolean isManager;
 
     public User(String name){
         super(name);
         this.isManager = false;
-        this.task = new Arraylist<Task>();
+        this.tasks = new ArrayList<Task>();
     }
 
-    public showTasks() {
+    public void showTasks() {
         System.out.println(this.tasks);
     }
 
@@ -26,7 +25,7 @@ public class User extends Person {
     }
 
     public void showTask(int task_index) {
-        System.out.println(this.tasks.get(task_index))
+        System.out.println(this.tasks.get(task_index));
     }
 
     public void updateTask(int task_index, String name) {

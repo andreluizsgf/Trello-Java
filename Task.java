@@ -1,10 +1,11 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
 
 class Task {
     private static int count = 0; 
     private final int id;
     private String name;
-    private Data date;
+    private Date date;
     private boolean isDone; 
 
     public Task(String name) {
@@ -26,6 +27,10 @@ class Task {
 
     public String setName(String name) {
         this.name = name;
+    }
+
+    public void setDate(Date date){
+        this.date = date;
     }
 
     public void markAsDone() {

@@ -1,6 +1,6 @@
-import java.util.Arraylist;
+import java.util.ArrayList;
 
-public class Admin extends Pessoa{
+public class Admin extends Person{
 
     private int is_Admin;
 
@@ -9,36 +9,36 @@ public class Admin extends Pessoa{
         is_Admin = 1;
     }
 
-    public void indexUsers(TodoListApp todo){
+    public void listUsers(TodoListApp todo){
         todo.listUsers();
     }
 
-    public void indexManagers(TodoListApp todo){
+    public void listManagers(TodoListApp todo){
         todo.listManagers();
     }
 
-    public void indexAdmins(TodoListApp todo){
+    public void listAdmins(TodoListApp todo){
         todo.listAdmins();
     }
 
-    public void indexGroups(TodoListApp todo){
-        todo.listGroups;
+    public void listGroups(TodoListApp todo){
+        todo.listGroups();
     }
 
-    public void createUser(String name){
-        users.add(new User(name));
+    public void createUser(String name, TodoListApp todo){
+        todo.createUser(name);
     }
 
-    public void deleteUser(int user_id){
-        users.remove(user_id);
+    public void deleteUser(int user_id, TodoListApp todo){
+        todo.deleteUser(user_id);
     }
 
-    public void updateUser(int user_id, String name){
-        users.add(user_id, users.get(user_id).setName(name));
+    public void updateUser(int user_id, String name, TodoListApp todo){
+        todo.updateUser(user_id, name);
     }
 
-    public void showUser(int user_id){
-        System.out.println(user.get(user_id).getName());
+    public void showUser(int user_id, TodoListApp todo){
+        todo.showUser(user_id);
     }
 
 

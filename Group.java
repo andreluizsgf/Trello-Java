@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Group {
     private static int count = 0; 
     private final int id;
@@ -10,6 +12,10 @@ class Group {
         this.name = name;
         this.users = new ArrayList<User>();
         this.tasks = new ArrayList<Task>();
+    }
+
+    public String getName(){
+        return this.name;
     }
 
     public void addMember(User member) {
@@ -26,15 +32,11 @@ class Group {
     /**
     imcompletoo
      */
-    public void addTask(Task taks) {
+    public void addTask(Task task) {
         this.tasks.add(task);
     }
 
     public void showTasks() {
         System.out.println(this.tasks);
-    }
-
-    public void removeMember(User member) {
-        this.users.remove(member);
     }
 }

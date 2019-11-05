@@ -1,11 +1,10 @@
-package app;
+public abstract class Person{
 
-public abstract class Person {
     private static int count = 0; 
     private final int id;
     private String name;
 
-    public Pessoa(name) {
+    public Person(String name) {
         this.id = this.count++;
         this.name = name;
 
@@ -15,9 +14,7 @@ public abstract class Person {
         return this.name;
     }
 
-    public setName(String name){
+    public void setName(String name){
         this.name = name;
     }
-
-    public abstract coco();
 }

@@ -14,6 +14,10 @@ public abstract class Person{
         return this.name;
     }
 
+    public int getId(){
+        return this.id;
+    }
+    
     public void setName(String name){
         this.name = name;
     }

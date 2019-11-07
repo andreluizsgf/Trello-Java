@@ -11,6 +11,14 @@ public class User extends Person {
         this.tasks = new ArrayList<Task>();
     }
 
+    public String getName(){
+        return super.getName();
+    }
+
+    public int getId(){
+        return super.getId();
+    }
+
     public void showTasks() {
         System.out.println(this.tasks);
     }

@@ -13,9 +13,9 @@ public class Admin extends Person{
         todo.listUsers();
     }
 
-    public void listManagers(TodoListApp todo){
+    /*public void listManagers(TodoListApp todo){
         todo.listManagers();
-    }
+    }*/
 
     public void listAdmins(TodoListApp todo){
         todo.listAdmins();

@@ -18,6 +18,10 @@ class Group {
         return this.name;
     }
 
+    public int getID(){
+        return this.id;
+    }
+
     public void addMember(User member) {
         this.users.add(member);
     }
@@ -32,11 +36,19 @@ class Group {
     /**
     imcompletoo
      */
+
     public void addTask(Task task) {
         this.tasks.add(task);
     }
 
-    public void showTasks() {
-        System.out.println(this.tasks);
+    public void listUsers() {
+        for(User user : users){
+            System.out.println(user.getId() + " - " + user.getName());
+        }
+    }
+
+    public void listTasks() {
+        for(Task task : tasks)
+            System.out.println(task.getID() + " " + task.getName() + " " + task.getDate());
     }
 }

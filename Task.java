@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Date;
 
 class Task {
@@ -25,8 +24,16 @@ class Task {
         return this.name;
     }
 
+    public int getID(){
+        return this.id;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Date getDate(){
+        return this.date;
     }
 
     public void setDate(Date date){

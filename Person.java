@@ -7,7 +7,6 @@ public abstract class Person{
     public Person(String name) {
         this.id = this.count++;
         this.name = name;
-
     }
 
     public String getName(){

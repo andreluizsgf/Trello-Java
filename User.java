@@ -19,8 +19,14 @@ public class User extends Person {
         return super.getId();
     }
 
+    public void setManage(boolean bool){
+        this.isManager = bool;
+    }
+    
     public void showTasks() {
-        System.out.println(this.tasks);
+        for(Task task : tasks){
+            System.out.println(task.getID() + " - " + task.getName());
+        }
     }
 
     public void createTask(String name, Date date) {
@@ -45,9 +51,10 @@ public class User extends Person {
         this.tasks.get(task_index).setDate(date);
     }
 
-    public Group createGroup(String name){
-        this.isManager = true;
-        return new Group(name);
+    public void createGroup(String name, TodoListApp todo){
+        Manager joao = todo.createManager(this.getName(), todo.createGroup(name));
+        todo.turnManager(joao, this.getId() - 1);
+        //todo.addUser(joao);
     }
 
 }

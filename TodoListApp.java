@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class TodoListApp{
     private ArrayList<User> users;
     private ArrayList<Admin> admins;
-    private ArrayList<Task> tasks;
     private ArrayList<Group> groups;
 
     public TodoListApp(){
@@ -13,42 +12,70 @@ public class TodoListApp{
 
     }
 
-    public void createUser(String name){
-        //User joao = new User(name);
-        users.add(new User(name));
+    public User createUser(String name){
+        addUser(new User(name));
+        return new User(name);
     }
 
-    public void addAdmin(Admin joao){
-        admins.add(joao);
+    public void addUser(User joao){
+        users.add(joao);
+    }
+
+    public Group createGroup(String name){
+        groups.add(new Group(name));
+        return new Group(name);
     }
 
     public Admin createAdmin(String name){
-        Admin joao = new Admin(name);
-        //addAdmin(joao);
-        return joao;
+        //Tem que adicionar na lista de admins, porém dá erro;
+        return new Admin(name);
+    }
+
+    public Manager createManager(String name, Group group){
+        return new Manager(name, group);
     }
 
     public void deleteUser(int user_id){
-        users.remove(users.get(user_id - 1));
+        User joao = getUser(user_id);
+        if(getUser(user_id) instanceof Manager){
+            Manager manager = (Manager)joao;
+            deleteGroup(manager);
+        }
+        users.remove(joao);
+    }
+
+    public void deleteGroup(Manager manager){
+        groups.remove(manager.getGroup());
+    }
+
+    public User getUser(int user_id){
+        return users.get(user_id - 1);
     }
 
     public void updateUser(int user_id, String name){
 
-        User joao = users.get(user_id - 1);
+        User joao = getUser(user_id);
         deleteUser(user_id );
         joao.setName(name);
         users.add(user_id - 1, joao);
     }
 
     public void showUser(int user_id){
-        System.out.println(users.get(user_id - 1).getName());
+        System.out.println(getUser(user_id).getName());
     }
 
     public void listUsers(){
-        for(Person user : users){
+        for(User user : users){
             System.out.println(user.getId() + " - " + user.getName());
         }
     }
+
+    public void turnManager(Manager manager, int user_id){
+        deleteUser(user_id);
+        users.add(user_id - 1, manager);
+    }
+
+
 
     public void listAdmins(){
         for(Person user : users){
@@ -66,7 +93,7 @@ public class TodoListApp{
 
     public void listGroups(){
         for(Group group : groups){
-            System.out.println(group.getName());
+            System.out.println(group.getID() + " - " + group.getName());
         }
     } 
 }

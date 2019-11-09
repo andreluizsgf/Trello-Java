@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Admin extends Person{
 
     private int is_Admin;
@@ -13,10 +11,6 @@ public class Admin extends Person{
         todo.listUsers();
     }
 
-    /*public void listManagers(TodoListApp todo){
-        todo.listManagers();
-    }*/
-
     public void listAdmins(TodoListApp todo){
         todo.listAdmins();
     }
@@ -25,8 +19,8 @@ public class Admin extends Person{
         todo.listGroups();
     }
 
-    public void createUser(String name, TodoListApp todo){
-        todo.createUser(name);
+    public User createUser(String name, TodoListApp todo){
+        return todo.createUser(name);
     }
 
     public void deleteUser(int user_id, TodoListApp todo){

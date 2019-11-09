@@ -2,17 +2,16 @@ public class Main{
 
     public static void main(String args[]) {
         TodoListApp todo = new TodoListApp();
-        Admin oioi = todo.createAdmin("oioi");
-        //Admin oioi = new Admin("oioi");
-        //User joao = new User("joao");
-        oioi.createUser("kaka", todo);
-        oioi.createUser("kaka", todo);
-        oioi.updateUser(1, "caio", todo);
-        //joao.getName();
-        //oioi.deleteUser(1, todo);
-        oioi.listUsers(todo);
-        oioi.showUser(1,todo);
-        oioi.listAdmins(todo);
-        oioi.listGroups(todo);
+        Admin oioi = todo.createAdmin("oioi"); //Cria admin
+        User kaka = oioi.createUser("kaka", todo); //Criar usuário
+        //kaka.createGroup("grupao", todo); //Cria grupo
+        Group group = new Group("grupao");
+        Manager caco = todo.createManager("joao", group);
+        todo.turnManager(caco, 1);
+        //oioi.updateUser(1, "caio", todo); //Atualiza nome de usuario de id 1;
+        //oioi.showUser(1,todo); //Mostra usuário de id 1;
+        oioi.listUsers(todo);   //Lista todos os usuários no sistema;
+        //oioi.listAdmins(todo);  //Lista todos os admins no sistema;
+        oioi.listGroups(todo);  //Lista todos os grupos no sistema;
     }
 }

@@ -11,6 +11,12 @@ public class User extends Person {
         this.tasks = new ArrayList<Task>();
     }
 
+    public User(int id, String name){
+        super(name);
+        this.isManager = false;
+        this.tasks = new ArrayList<Task>();
+    }
+
     public String getName(){
         return super.getName();
     }
@@ -52,9 +58,9 @@ public class User extends Person {
     }
 
     public void createGroup(String name, TodoListApp todo){
-        Manager joao = todo.createManager(this.getName(), todo.createGroup(name));
-        todo.turnManager(joao, this.getId() - 1);
-        //todo.addUser(joao);
+        Manager joao = todo.createManager(this.getId(), this.getName(), todo.createGroup(name));
+        //todo.turnManager(joao, this.getId() - 1);
+        todo.addUser(joao);  
     }
 
 }

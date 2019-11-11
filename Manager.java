@@ -3,8 +3,8 @@ public class Manager extends User{
     
     private Group group;
     
-    public Manager(String name, Group group){
-        super(name);
+    public Manager(int id, String name, Group group){
+        super(id, name);
         this.group = group;
     }
 

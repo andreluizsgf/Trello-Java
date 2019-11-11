@@ -7,14 +7,14 @@ public class TodoListApp{
 
     public TodoListApp(){
         this.users = new ArrayList<User>();
-        this.tasks = new ArrayList<Task>();
+        this.admins = new ArrayList<Admin>();
         this.groups = new ArrayList<Group>();
 
     }
 
     public User createUser(String name){
-        addUser(new User(name));
-        return new User(name);
+        User joao = new User(name);
+        return joao;
     }
 
     public void addUser(User joao){
@@ -31,8 +31,8 @@ public class TodoListApp{
         return new Admin(name);
     }
 
-    public Manager createManager(String name, Group group){
-        return new Manager(name, group);
+    public Manager createManager(int id, String name, Group group){
+        return new Manager(id, name, group);
     }
 
     public void deleteUser(int user_id){
@@ -74,7 +74,6 @@ public class TodoListApp{
         deleteUser(user_id);
         users.add(user_id - 1, manager);
     }
-
 
 
     public void listAdmins(){

@@ -35,5 +35,7 @@ public class Admin extends Person{
         todo.showUser(user_id);
     }
 
-
+    public void listManagers(TodoListApp todo){
+        todo.listManagers();
+    }   
 }

@@ -1,5 +1,6 @@
+import java.util.Date;
 
-public class Manager extends User{
+public class Manager extends User implements UInterface{
     
     private Group group;
     
@@ -29,7 +30,7 @@ public class Manager extends User{
     }
 
     public void addTask(String name){
-        this.group.addTask(new Task(name));
+        this.group.createTask(new Task(name));
     }
 
     public void listUsers(){
@@ -38,5 +39,21 @@ public class Manager extends User{
 
     public void listTasks(){
         this.group.listTasks();
+    }
+
+    public void createTask(String name, Date date) {
+        this.group.createTask(name, date);
+    }
+
+    public void deleteTask(int task_index) {
+        this.group.deleteTask(task_index);
+    }
+
+    public void showTask(int task_index) {
+        this.group.showTask(task_index);
+    }
+
+    public void updateTask(int task_index, String name) {
+        this.group.updateTask(task_index, name);
     }
 }

@@ -23,7 +23,7 @@ public class TodoListApp{
     }
 
     public void addUser(User joao, int user_id){
-        users.add(user_id, joao);
+        users.add(user_id - 1, joao);
     }
 
     public Group createGroup(String name){
@@ -54,7 +54,11 @@ public class TodoListApp{
     }
 
     public User getUser(int user_id){
-        return users.get(user_id - 1);
+        for(User user : users)
+            if(user.getId() == user_id && !(user instanceof Manager))    
+                return user;
+            
+            return null;
     }
 
     public void updateUser(int user_id, String name){
@@ -88,12 +92,12 @@ public class TodoListApp{
         }
     }
 
-    /*public void listManagers(){
+    public void listManagers(){
         for(Person user : users){
             if(user instanceof Manager)
                 System.out.println(user.getName());
         }    
-    }*/
+    }
 
     public void listGroups(){
         for(Group group : groups){

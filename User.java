@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class User extends Person {
+public class User extends Person implements UInterface {
     private ArrayList<Task> tasks;
     private boolean isManager;
 
@@ -12,7 +12,7 @@ public class User extends Person {
     }
 
     public User(int id, String name){
-        super(name);
+        super(id, name);
         this.isManager = false;
         this.tasks = new ArrayList<Task>();
     }
@@ -57,10 +57,10 @@ public class User extends Person {
         this.tasks.get(task_index).setDate(date);
     }
 
-    public void createGroup(String name, TodoListApp todo){
+    public Manager createGroup(String name, TodoListApp todo){
         Manager joao = todo.createManager(this.getId(), this.getName(), todo.createGroup(name));
-        //todo.turnManager(joao, this.getId() - 1);
-        todo.addUser(joao, this.getId()-1);  
+        todo.addUser(joao, this.getId());
+        return joao;  
     }
 
 }

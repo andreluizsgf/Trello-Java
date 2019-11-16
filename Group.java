@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 class Group {
     private static int count = 0; 
@@ -33,11 +34,8 @@ class Group {
     public void removeMember(User member) {
         this.users.remove(member);
     }
-    /**
-    imcompletoo
-     */
 
-    public void addTask(Task task) {
+    public void createTask(Task task) {
         this.tasks.add(task);
     }
 
@@ -49,6 +47,23 @@ class Group {
 
     public void listTasks() {
         for(Task task : tasks)
-            System.out.println(task.getID() + " " + task.getName() + " " + task.getDate());
+            System.out.println(task.getID() + " - " + task.getName() + " - " + task.getDate());
+    }
+
+    public void createTask(String name, Date date) {
+        Task task = new Task(name, date);
+        this.tasks.add(task);
+    }
+
+    public void deleteTask(int task_index) {
+        this.tasks.remove(task_index - 1);
+    }
+
+    public void showTask(int task_index) {
+        System.out.println(this.tasks.get(task_index));
+    }
+
+    public void updateTask(int task_index, String name) {
+        this.tasks.get(task_index - 1).setName(name);
     }
 }

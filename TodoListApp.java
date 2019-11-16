@@ -14,11 +14,16 @@ public class TodoListApp{
 
     public User createUser(String name){
         User joao = new User(name);
+        addUser(joao);
         return joao;
     }
 
     public void addUser(User joao){
         users.add(joao);
+    }
+
+    public void addUser(User joao, int user_id){
+        users.add(user_id, joao);
     }
 
     public Group createGroup(String name){

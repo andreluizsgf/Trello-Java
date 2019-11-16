@@ -60,7 +60,7 @@ public class User extends Person {
     public void createGroup(String name, TodoListApp todo){
         Manager joao = todo.createManager(this.getId(), this.getName(), todo.createGroup(name));
         //todo.turnManager(joao, this.getId() - 1);
-        todo.addUser(joao);  
+        todo.addUser(joao, this.getId()-1);  
     }
 
 }

@@ -47,7 +47,7 @@ class Group {
 
     public void listTasks() {
         for(Task task : tasks)
-            System.out.println(task.getID() + " - " + task.getName() + " - " + task.getDate());
+            task.showTask();
     }
 
     public void createTask(String name, Date date) {
@@ -60,7 +60,7 @@ class Group {
     }
 
     public void showTask(int task_index) {
-        System.out.println(this.tasks.get(task_index));
+        this.tasks.get(task_index-1).showTask();
     }
 
     public void updateTask(int task_index, String name) {

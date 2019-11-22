@@ -49,6 +49,12 @@ public class Manager extends User implements UInterface{
         this.group.deleteTask(task_index);
     }
 
+    public void destroyGroup(TodoListApp todo){
+        User joao = todo.getUser(super.getId());
+        joao.setManage(false);
+        todo.deleteUser(super.getId());
+    }
+
     public void showTask(int task_index) {
         this.group.showTask(task_index);
     }

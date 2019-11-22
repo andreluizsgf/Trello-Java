@@ -42,7 +42,7 @@ public class TodoListApp{
 
     public void deleteUser(int user_id){
         User joao = getUser(user_id);
-        if(getUser(user_id) instanceof Manager){
+        if(joao instanceof Manager){
             Manager manager = (Manager)joao;
             deleteGroup(manager);
         }

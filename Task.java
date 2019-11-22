@@ -8,7 +8,7 @@ class Task {
     private boolean isDone; 
 
     public Task(String name) {
-        this.id = this.count++;
+        this.id = this.count;
         this.name = name;
         this.isDone = false;
     }
@@ -25,7 +25,7 @@ class Task {
     }
 
     public int getID(){
-        return this.id;
+        return this.id+1;
     }
 
     public void setName(String name) {
@@ -42,5 +42,9 @@ class Task {
 
     public void markAsDone() {
         this.isDone = true;
+    }
+
+    public void showTask(){
+        System.out.println(this.getID() + " - " + this.getName() + " - " + this.getDate());
     }
 }

@@ -59,6 +59,7 @@ public class User extends Person implements UInterface {
 
     public Manager createGroup(String name, TodoListApp todo){
         Manager joao = todo.createManager(this.getId(), this.getName(), todo.createGroup(name));
+        this.setManage(true);
         todo.addUser(joao, this.getId());
         return joao;  
     }

@@ -92,6 +92,7 @@ public class User extends Person implements TaskMaintainer {
 //        todo.addUser(joao, this.getId());
 //        return joao;  
 //    }
+	
 	@Override
 	public String toString() {
 		return "User" + super.toString() + ", tasks: " + this.getTasks() + " }";

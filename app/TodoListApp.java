@@ -152,11 +152,5 @@ public abstract class TodoListApp {
 		TodoListApp.showAdmins();
 		TodoListApp.showGroups();
 		TodoListApp.showUsers(true);
-	}
-
-//	public static ArrayList<User> getUsers() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-    
+	}    
 }

@@ -1,6 +1,7 @@
+package app;
 import java.util.Date;
 
-class Task {
+public class Task {
     private static int count = 0; 
     private final int id;
     private String name;
@@ -8,13 +9,13 @@ class Task {
     private boolean isDone; 
 
     public Task(String name) {
-        this.id = this.count;
+        this.id = Task.count;
         this.name = name;
         this.isDone = false;
     }
 
     public Task(String name, Date date) {
-        this.id = this.count++;
+        this.id = Task.count++;
         this.name = name;
         this.isDone = false;
         this.date = date;
@@ -24,7 +25,7 @@ class Task {
         return this.name;
     }
 
-    public int getID(){
+    public int getId(){
         return this.id+1;
     }
 
@@ -45,6 +46,10 @@ class Task {
     }
 
     public void showTask(){
-        System.out.println(this.getID() + " - " + this.getName() + " - " + this.getDate());
+    	String isMarked = " ";
+    	if(this.isDone) {
+    		isMarked = "x";
+    	}
+        System.out.println("#" + this.getId() + "[" + isMarked + "] - " + this.getName() + " - " + this.getDate());
     }
 }

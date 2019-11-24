@@ -3,14 +3,14 @@
 Requisitos:
 
 *   [x] Sobrecarga
-*   [x] Sobreposição
-*   [x] Composição
-*   [x] Herança
-*   [?] Polimorfismo/ligação dinamica
-*   [x] Campos estáticos
+*   [x] Sobreposiï¿½ï¿½o
+*   [x] Composiï¿½ï¿½o
+*   [x] Heranï¿½a
+*   [x] Polimorfismo/ligaï¿½ï¿½o dinamica
+*   [x] Campos estï¿½ticos
 *   [x] Instace of 
-*   [x] Classes Abstratas/métodos abstratos
-*   [?] Cast
+*   [x] Classes Abstratas/mï¿½todos abstratos
+*   [x] Cast
 *   [x] Interfaces
-*   [x?] Pacotes
-*   [ ] Tratamento de Exceção
+*   [x] Pacotes
+*   [ ] Tratamento de Exceï¿½ï¿½o

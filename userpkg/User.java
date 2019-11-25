@@ -86,12 +86,6 @@ public class User extends Person implements TaskMaintainer {
 	public void removeTask(Task task) {
 		this.tasks.remove(task);
 	}
-    
-//    public Manager createGroup(String name, TodoListApp todo){
-//        Manager joao = todo.createManager(this.getId(), this.getName(), todo.createGroup(name));
-//        todo.addUser(joao, this.getId());
-//        return joao;  
-//    }
 	
 	@Override
 	public String toString() {

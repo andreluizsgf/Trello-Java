@@ -49,12 +49,16 @@ public abstract class TodoListApp {
 		return target;
     }
     
-    public static User getUser(Person admin, int userId) {
-    	if(TodoListApp.hasPermission(admin, Permition.ADMIN)) {
+    public static User getUser(Person person, int userId) {
+    	if(TodoListApp.hasPermission(person, Permition.ADMIN_OR_MANAGER) || person.getId() == userId) {
     		return TodoListApp.getUser(userId);
     	}else {
     		return null;
     	}
+    }
+    
+    public static User getUser(Group group, int userId) {
+		return TodoListApp.getUser(userId);
     }
     
     public static ArrayList<User> getUsers(Person admin) {
@@ -81,11 +85,13 @@ public abstract class TodoListApp {
 	
 	public static void showUsers(boolean compact) {
 		if(compact) {
+			System.out.println("[");
 			for (User user : TodoListApp.users) {
 				//@Polimorfismo
 				//@Ligação dinamica
 				user.presentation();
 			}
+			System.out.println("]");
 		}else {			
 			System.out.println(TodoListApp.users);
 		}
@@ -103,6 +109,9 @@ public abstract class TodoListApp {
 			if(user instanceof Manager) {
 				//@Casting
 				TodoListApp.deleteGroup(user, ((Manager) user).getGroup());
+			}
+			for (Group group : TodoListApp.groups) {
+				group.removeUser(user);
 			}
 		}else {
 			System.out.println(TodoListApp.ERROR_STR);

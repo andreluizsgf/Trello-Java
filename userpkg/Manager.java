@@ -13,11 +13,17 @@ public class Manager extends User {
     public Manager(String name, Group group){
         super(name);
         this.group = group;
+        if(this.group != null) {
+        	this.group.addUser(this);
+        }
     }
     
     public Manager(int id, String name, Group group){
         super(id, name);
         this.group = group;
+        if(this.group != null) {
+        	this.group.addUser(this);
+        }
     }
     
     @Override
@@ -75,8 +81,7 @@ public class Manager extends User {
     
     @Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return "Manager{ name: " + this.getName() + " id: #" + this.getId() +", tasks: " + this.getTasks() + ", group: " + this.getGroup() + " }";
+		return "Manager{ name: " + this.getName() + ", id: #" + this.getId() +", tasks: " + this.getTasks() + ", group: #" + this.getGroup().getId() + " }";
 	}
 
 

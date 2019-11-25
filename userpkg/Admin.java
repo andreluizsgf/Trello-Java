@@ -15,7 +15,7 @@ public class Admin extends Person implements UserMaintainer {
 		System.out.println("Admin{ name:" + this.getName() + "(#" + this.getId() + ") }");		
 	}
     
-    //
+    //Metodos pra gerenciar tasks
     
     public void createTaskIn(TaskMaintainer taskMaintainer, String name) {
     	taskMaintainer.createTask(name);
@@ -57,8 +57,6 @@ public class Admin extends Person implements UserMaintainer {
 	public ArrayList<User> getUsers() {
 		return TodoListApp.getUsers(this);
 	}
-	
-	//
 	
 	public void deleteGroup(int groupId) {
 		TodoListApp.deleteGroup(this, groupId);

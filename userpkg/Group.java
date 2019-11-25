@@ -36,7 +36,7 @@ public class Group implements UserMaintainer, TaskMaintainer {
     //Implementa os metodos da Interface UserMaintainer 
     
 	public void addUser(int userId) {
-		User user = null;//TodoListApp.getUser(userId);
+		User user = TodoListApp.getUser(this, userId);
 		this.users.add(user);
 	}
 	

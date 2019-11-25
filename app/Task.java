@@ -52,4 +52,14 @@ public class Task {
     	}
         System.out.println("#" + this.getId() + "[" + isMarked + "] - " + this.getName() + " - " + this.getDate());
     }
+    
+    @Override
+    public String toString() {
+    	String isMarked = " ";
+    	if(this.isDone) {
+    		isMarked = "x";
+    	}
+        String output = "Task{ id: #" + this.getId() + ", name: " + this.getName() + " , isDone: [" + isMarked + "] , date:" + this.getDate() + " }";
+        return output;
+    }
 }

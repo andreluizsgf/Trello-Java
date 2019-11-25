@@ -29,7 +29,7 @@ public abstract class Person {
     public void setName(String name){
         this.name = name;
     }
-    
+    //@Metodo Abstrato
     public abstract void presentation();
     
     @Override
